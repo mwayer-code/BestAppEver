@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BestAppEver.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+           
+            <Label
+                Text="Find out when you are legally allowed to drink"
+                x:Name="Lbl_drinkAge"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Find out when you can drink" />
+            <Label
+                Text="Please enter your Birthday"
+                x:Name="Lbl_bday"
+                FontSize="Medium"
+                SemanticProperties.Description="Enter your Birthday" />
+            <!-- Custom Date Picker because DatePicker took forever to scroll through months -->
+            <HorizontalStackLayout Spacing="100" >
+                <Picker x:Name="MonthPicker" Title="Month" />
+                <Picker x:Name="DayPicker" Title="Day" />
+                <Picker x:Name="YearPicker" Title="Year" />
+            </HorizontalStackLayout>
+            <Label
+                Text="What Country do you reside in?"
+                x:Name="Lbl_country"
+                FontSize="Medium"
+                />
+            <Picker 
+                x:Name="CountryPicker"
+                Title="Country"
+                />
+            <Label
+                Text=""
+                x:Name="Lbl_canDrinkMessage"
+                FontSize="Medium"
+                Style="{StaticResource SubHeadline}"
+            />
+            <Button
+                x:Name="Btn_drinkAge"
+                Clicked="Btn_Clicked"
+                Text="Calculate" 
+                SemanticProperties.Hint="Calculates when you are legally able to drink based on your age"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
